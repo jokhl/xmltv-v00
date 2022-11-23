@@ -1,0 +1,10 @@
+{
+  "name": "xmltv-voo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "GPLv3",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "luxon": "^2.0.2"
+  }
+}

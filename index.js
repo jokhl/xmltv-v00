@@ -1,0 +1,10 @@
+const tvh = require('./tvheadend')
+const voo = require('./voo')
+const xmltv = require('./xmltv')
+const m3u = require('./m3u')
+
+tvh.getTVHData()
+  .then(data => tvh.genChannelMapping(data))
+  .then(channelMapping => voo.getEPG(channelMapping))
+  .then(epgData => xmltv.convert(epgData))
+  .then(_ => m3u.genPlaylist())
